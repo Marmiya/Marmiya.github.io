@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About me
-subtitle: Zeal and Ambition
+title: Michael Wong
+subtitle: I will die, but it won't matter
 ---
 
 My name is Mingyang Wong. I am:
