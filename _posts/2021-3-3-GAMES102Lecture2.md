@@ -8,5 +8,11 @@ share-img: /assets/img/path.jpg
 tags: [notes]
 ---
 
-# Data fitting
+## Data fitting
 
+Finding fitting function is application-drive and domain-drive.  
+
+### Methodology
+
+* Where to find?
+  * determine the 
