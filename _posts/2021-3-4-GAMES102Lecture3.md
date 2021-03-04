@@ -7,7 +7,7 @@ thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [notes]
 ---
-$$ f\rightarrow r$$
+
 ## Parametric curve fitting
 
 ### 1. Tensor product basis function
