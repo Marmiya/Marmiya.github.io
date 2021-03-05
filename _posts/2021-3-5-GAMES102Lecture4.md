@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GAMES-102 Lec3 NOTES
+title: GAMES-102 Lec4 NOTES
 subtitle: NOTES
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
