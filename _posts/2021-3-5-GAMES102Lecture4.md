@@ -3,7 +3,7 @@ layout: post
 title: GAMES-102 Lec4 NOTES
 subtitle: NOTES
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/cubic_spline.png
 tags: [notes]
 ---
 
