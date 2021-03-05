@@ -3,12 +3,12 @@ layout: post
 title: GAMES-102 Lec3 NOTES
 subtitle: NOTES
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/parametric_curve.png
 share-img: /assets/img/path.jpg
 tags: [notes]
 ---
 
-## Parametric curve fitting
+## Parametric Curve Fitting
 
 ### 1. Tensor product basis function
 
