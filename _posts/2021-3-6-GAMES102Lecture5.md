@@ -23,17 +23,19 @@ tags: [notes]
 
 ### 2. Bernstein Basis Function
 
-Bernstein basis function of degree n:
+Bernstein basis function of degree n:\\\\
+
 $$
 B=\{B_o^{(n)},B^{(n)}_1,...,B^{(n)_n} \}
 $$
-
+\\
 $$
 B_{i}^{(n)}(t)=\left( {\begin{array}{*{20}{c}}
 n\\
 1
 \end{array}} \right)t^i(1-t)^{n-i}=B^{(degree)}_{i-th\  basis\ function}
 $$
+\\
 **Symmetry**: 
 $$
 B^{(n)}_i(t)=B^n_{n-i}(1-t)
