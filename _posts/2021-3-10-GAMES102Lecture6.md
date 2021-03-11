@@ -45,5 +45,9 @@ Two types:
 
 **Chaykin angle method:**
 
-![Chaykin angle method](/assets/img/chaykin.png)
+![Chaykin angle method](/assets/img/chaikin.png)
+
+Necessary conditions of convergence:
+
+The matrix of 
 
