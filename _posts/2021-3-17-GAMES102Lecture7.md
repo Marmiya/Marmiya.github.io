@@ -9,13 +9,13 @@ tags: [notes]
 
 ## Curve Fairing & Discrete Curves & Triangular Mesh
 
- ### 1. Curve Fairing
+### 1. Curve Fairing
 
 What is fairing curve?
 
 ![Curve fairing](/assets/img/curvefairing.png)
 
-**Tangent vector** to curve $$C(t)=(x(t),y(t))$$ is
+**Tangent vector** to curve $$C(t)=(x(t),y(t))$$ is\\
 $$
 T=C'(t)=\frac{dC(t)}{dt}=[x'(t),y'(t)]
 $$
