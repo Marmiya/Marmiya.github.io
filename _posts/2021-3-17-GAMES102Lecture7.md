@@ -15,14 +15,18 @@ What is fairing curve?
 
 ![Curve fairing](/assets/img/curvefairing.png)
 
-**Tangent vector** to curve $$C(t)=(x(t),y(t))$$ is\\
+**Tangent vector** to curve $$C(t)=(x(t),y(t))$$ is
+
 $$
 T=C'(t)=\frac{dC(t)}{dt}=[x'(t),y'(t)]
 $$
+
 **Unit length tangent vector**
+
 $$
 \vec{T}=\vec{C}(t)=\frac{[x'(t),y'(t)]}{\sqrt{x'(t)^2+y'(t)^2}}
 $$
+
 **Curvature**
 $$
 k(t)=\frac{x'(t)y''(t)-y'(t)x''(t)}{(x'(t)^2+y'(t)^2)^\frac{3}{2}}
