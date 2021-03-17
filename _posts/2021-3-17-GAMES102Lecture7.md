@@ -28,9 +28,11 @@ $$
 $$
 \\
 **Curvature**
+\\
 $$
 k(t)=\frac{x'(t)y''(t)-y'(t)x''(t)}{(x'(t)^2+y'(t)^2)^\frac{3}{2}}
 $$
+\\
 Curvature is **independent** of parameterization.
 
 #### 'New Definition' of Curve Fairing
