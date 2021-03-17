@@ -228,3 +228,105 @@ I finish this assignment by **pytorch**.
 **Result:**
 
 The curve My function generated has a little shock, which may be caused by the parameters or this basis function span is not fit to the function I drafted. 
+
+## Assignment 3 Use Single Parameter Curve to fit Random Dot column
+
+[Original details](/assets/ass/games_102_assignment/assignment3.md)
+
+I finish it by **pytorch**
+
+1. I choose the parameter form of **Cardioid Curve** with $$a=1$$. 
+   $$
+   \begin{cases}
+   x(t)=2cos(t)-cos(2t)\\
+   t(t)=2sin(t)-sin(2t)
+   \end{cases}
+   $$
+
+2. In order to overlap, I intercept $$t$$ in range $$(-3,2)$$.
+
+   ```python
+   def heartX(t):
+       return 2 * math.cos(t) - math.cos(2 * t)
+   def heartY(t):
+       return 2 * math.sin(t) - math.sin(2 * t)
+   ```
+
+   
+
+3. Generate some points to simulate sampling.
+
+   ```python
+   pointsNumber = 80
+   samlpeT = np.array(sorted(np.random.rand(pointsNumber) * 5 - 3))
+   samlpeX = torch.from_numpy(fromiterHeartX(samlpeT)).type(torch.FloatTensor)
+   samlpeY = torch.from_numpy(fromiterHeartY(samlpeT)).type(torch.FloatTensor)
+   ```
+
+4. Then we should use several parameterization methods in lesson.
+
+   here I use **Chord Parameterization** as example:
+
+   ```python
+   total = 0.0
+   CT = []
+   lent = 0.0
+   for i in range(pointsNumber):
+       total += math.sqrt(math.pow(samlpeX[i], 2) + math.pow(samlpeY[i], 2))
+   for i in range(pointsNumber):
+       CT.append(lent)
+       lent += math.sqrt(math.pow(samlpeX[i], 2) + math.pow(samlpeY[i], 2)) / total
+   CNT = np.array(CT)
+   CNTT = torch.from_numpy(CNT).type(torch.FloatTensor).resize_(pointsNumber, 1)
+   ```
+
+5. Then we define two model for $$x$$ and $$y$$, respectively, and train them (just like normal neural network model ).
+
+   ```python
+   modelX = nn.Sequential(collections.OrderedDict([
+       ('fc1',nn.Linear(1, fc1Number)),
+       ('af1',nn.Sigmoid()),
+       ('fc2',nn.Linear(fc1Number, fc2Number)),
+       ('af2',nn.Sigmoid()),
+       ('fc3',nn.Linear(fc2Number, 1))
+   ]))
+   ```
+
+   ```python
+   def SQLoss(outputX, outputY, targetX, targetY):
+       los = torch.sum( torch.sqrt(torch.pow(outputX - targetX, 2) + torch.pow(outputY - targetY, 2)) )
+       return los
+   ```
+
+   
+
+   ```python
+   learningRate = 0.03
+   criterionS = SQLoss
+   optimizerX = torch.optim.Adam(modelX.parameters(), lr = learningRate)
+   optimizerY = torch.optim.Adam(modelY.parameters(), lr = learningRate)
+   epochs = 10000
+       
+   for i in range(epochs):
+       xPred = modelX(CNTT)
+       yPred = modelY(CNTT)
+       
+       xPred = xPred.squeeze()
+       yPred = yPred.squeeze()
+       
+       loss = criterionS(xPred, yPred, samlpeX, samlpeY)
+           
+       optimizerX.zero_grad()
+       optimizerY.zero_grad()
+           
+       loss.backward()
+       
+       optimizerX.step()
+       optimizerY.step()
+   ```
+
+   
+
+**RESULT:**
+
+![](/assets/img/ass3.png)
